@@ -11,6 +11,8 @@ services:
   mongo:
     image: bitnami/mongodb
     restart: always
+    ports:
+      - 27017:27017
     environment:
       - MONGODB_ROOT_PASSWORD=MONGODB_ROOT_PASSWORD
       - MONGODB_USERNAME=MONGODB_USERNAME
@@ -35,7 +37,6 @@ services:
     environment:
       - MINIO_ROOT_USER=MINIO_ROOT_USER
       - MINIO_ROOT_PASSWORD=MINIO_ROOT_PASSWORD
-      - MINIO_HTTP_TRACE=/opt/bitnami/minio/log/minio.log
     volumes:
       - minio_data:/data
 volumes:
