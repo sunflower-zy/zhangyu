@@ -10,7 +10,6 @@ services:
       - oss
   mongo:
     image: bitnami/mongodb
-    restart: always
     ports:
       - 27017:27017
     environment:
